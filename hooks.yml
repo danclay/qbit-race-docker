@@ -1,0 +1,50 @@
+- id: qbit-race
+  execute-command: /var/scripts/qbit-race.sh
+  command-working-directory: /
+  include-command-output-in-response: true
+  include-command-output-in-response-on-error: true
+  pass-arguments-to-command:
+    - source: url
+      name: command
+- id: add
+  execute-command: /var/scripts/add.sh
+  command-working-directory: /
+  include-command-output-in-response: true
+  include-command-output-in-response-on-error: true
+  pass-arguments-to-command:
+    - source: url
+      name: path
+    - source: url
+      name: category
+    - source: url
+      name: tracker-tags
+    - source: url
+      name: extra-tags
+- id: race
+  execute-command: /var/scripts/race.sh
+  command-working-directory: /
+  include-command-output-in-response: true
+  include-command-output-in-response-on-error: true
+  pass-arguments-to-command:
+    - source: url
+      name: info-hash
+    - source: url
+      name: tracker-tags
+    - source: url
+      name: extra-tags
+- id: completed
+  execute-command: /var/scripts/completed.sh
+  command-working-directory: /
+  include-command-output-in-response: true
+  include-command-output-in-response-on-error: true
+  pass-arguments-to-command:
+    - source: url
+      name: info-hash
+- id: tag-error
+  execute-command: /var/scripts/tag-error.sh
+  command-working-directory: /
+  include-command-output-in-response: true
+  include-command-output-in-response-on-error: true
+  pass-arguments-to-command:
+    - source: url
+      name: dry-run
