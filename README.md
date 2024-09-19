@@ -7,7 +7,7 @@ Uses [TheCatLady/docker-webhook](https://github.com/TheCatLady/docker-webhook) (
 As this differs a fair bit from the main qbit-race software, a separate versioning system is in place. So v1.0.0 is not v1.0.0 of qbit-race. Additionally, this starts off with the alpha 2.0.0 version. See the changelog for version mappings.
 
 ## Configuration
-`
+
 Mount your `config.json` file to `/root/.config/qbit-race/config.json`, or mount a configuration directory to `/root/.config/qbit-race` then run `docker exec qbit-race qbit-race` to generate a default config.
 
 ## Available Commands
@@ -30,12 +30,12 @@ Everything following "qbit-race" in the regular command.
 
 ### completed
 
-`http://qbit-race:9000/hooks/race?info-hash=123`
+`http://qbit-race:9000/hooks/completed?info-hash=123`
 
 ### tag-error
 
-`http://qbit-race:9000/hooks/race?dry-run=false`
+`http://qbit-race:9000/hooks/tag-error?dry-run=false`
 
 ## Customization
 
-If you wish to customize `hooks.yml` or the scripts, you can mount your own `hooks.yml` to `/config/hooks.yml` and your own scripts to anywhere (the default used is /var/scripts). Just make sure to reference those script locations in `hooks.yml` according to the [adnanh/webhook](https://github.com/adnanh/webhook) docs.
+If you wish to customize `hooks.yml` or the scripts, you can mount your own `hooks.yml` to `/config/hooks.yml` and your own scripts to anywhere (the default used is /var/scripts). Just make sure to reference those script locations in `hooks.yml` according to the [adnanh/webhook](https://github.com/adnanh/webhook) docs. To maintain current function in addition to customizations, copy the hook.yml file from the Github here and add to that.
