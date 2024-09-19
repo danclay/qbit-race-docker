@@ -6,4 +6,4 @@ else
     TAG_OPTION="--no-tracker-tags"
 fi
 
-/usr/local/bin/qbit-race race --info-hash "$1" $TAG_OPTION --extra-tags "$3"
+/usr/local/bin/qbit-race race -i "$1" $TAG_OPTION --extra-tags "$3"
