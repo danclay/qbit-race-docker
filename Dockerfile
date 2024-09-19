@@ -12,6 +12,7 @@ RUN         apk add --update --no-cache curl jq tini tzdata openssh bash
 RUN         npm i -g qbit-race@2.0.0-alpha.14
 COPY        --from=BUILD_IMAGE /usr/local/bin/webhook /usr/local/bin/webhook
 COPY        scripts /var/scripts
+RUN         chmod +x /var/scripts/*
 COPY        hooks.yml /config/hooks.yml
 WORKDIR     /config
 EXPOSE      9000
